@@ -1,0 +1,29 @@
+.container {
+  padding:0;
+}
+.banner {
+  width:750rpx;
+  height:422rpx;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  box-shadow: 0 1px 5px 1px rgba(0,0,0,0.5);
+}
+
+.userinfo-nickname {
+  color: #999999;
+  margin:20rpx;
+}
+
+.usermotto {
+  margin-top: 100px;
+}
