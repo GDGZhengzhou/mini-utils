@@ -9,7 +9,8 @@ Page({
   data: {
     username: '',
     email: '',
-    motto:''
+    motto:'',
+    userData:''
   },
 
   /**
@@ -29,7 +30,10 @@ Page({
         console.log(res.data);
         const userInfo = res.data;
         if (!userInfo.signed) {
-          that.userSign(userInfo);
+          that.showInfo(userInfo);
+          that.setData({
+            userData:userInfo
+          })
         } else {
           wx.showToast({
             title: '请勿重复签到!',
@@ -116,19 +120,46 @@ Page({
   onShareAppMessage: function () {
 
   },
-  userSign(data) {
+  showInfo(data) {
+    wx.hideLoading();
+    this.setData({
+      username: data.name,
+      email: data.email,
+      motto: '可以签到',
+      id:data.id
+    });
+
+  },
+  showAction() {
+    if (this.data.username) {
+      const that = this;
+      wx.showActionSheet({
+        itemList: ['确认签到'],
+        success(res) {
+          if (res.tapIndex === 0) {
+            that.userSign();
+          } else {
+            console.log(res)
+          }
+        },
+        fail(res) {
+          console.log(res.errMsg)
+        }
+      })
+    }
+    
+  },
+  userSign() {
     const that = this;
     wx.request({
-      url: `${app.globalData.baseUrl}/${data.id}`,
+      url: `${app.globalData.baseUrl}/${this.data.id}`,
       data:{
-        ...data,
+        ...this.data.userData,
         signed:true
       },
       method:'PUT',
       success(res) {
         that.setData({
-          username:data.name,
-          email:data.email,
           motto:'已成功签到'
         })
         wx.hideLoading();

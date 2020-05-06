@@ -75,16 +75,24 @@ Page({
     })
   },
   getUserId(res) {
-    console.log(res);
-    console.log(util.Base64.decode(res.result));
-    const result = util.Base64.decode(util.Base64.decode(res.result));
-    console.log(result);
-    const obj = JSON.parse(result);
-    console.log(obj.uninum);
-    console.log(util.Base64.decode(obj.uninum));
-    const num = util.Base64.decode(obj.uninum).replace('GDGZhengzhou@DevFest2019', '');
-    console.log(num);
-    return parseInt(num) / 1229 / 314;
+   try {
+     console.log(res);
+     console.log(util.Base64.decode(res.result));
+     const result = util.Base64.decode(util.Base64.decode(res.result));
+     console.log(result);
+     const obj = JSON.parse(result);
+     console.log(obj.uninum);
+     console.log(util.Base64.decode(obj.uninum));
+     const num = util.Base64.decode(obj.uninum).replace('GDGZhengzhou@DevFest2019', '');
+     console.log(num);
+     return parseInt(num) / 1229 / 314;
+   } catch(e) {
+     console.log(e);
+     wx.showToast({
+       title: '无效二维码！请确认票码是否正确！',
+       icon:'none'
+     });
+   }
   },
   getUserInfo: function(e) {
     console.log(e)

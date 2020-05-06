@@ -2,7 +2,7 @@
 <view class="container">
 <image class="banner" src="https://gdg.l-blog.me/banner.gif" mode="cover"></image>
   <view class="userinfo">
-      <image class="userinfo-avatar" src="https://gdg.l-blog.me/logo.png" mode="cover"></image>
+      <image bindtap="showAction" class="userinfo-avatar" src="https://gdg.l-blog.me/logo.png" mode="cover"></image>
       <text class="userinfo-nickname">{{username}}</text>
        <text class="userinfo-nickname">{{email}}</text>
   </view>
