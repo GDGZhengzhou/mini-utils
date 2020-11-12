@@ -1,0 +1,20 @@
+<view class="logo">
+
+</view>
+
+<view class="tip">请输入权限认证信息</view>
+
+<view class="login-form">
+  <view class="input-item">
+    <input bindinput="onInputChange" data-name="identifier" auto-focus placeholder="请输入您的 GDG Zhengzhou 邮箱"/>
+  </view>
+  <view class="input-item">
+    <input password bindinput="onInputChange" data-name="password" placeholder="请输入密码"/>
+  </view>
+</view>
+
+<van-button bind:click="login" class="login-btn" block color="linear-gradient(to right, #4bb0ff, #6149f6)">
+  登录
+</van-button>
+
+<view class="copyright">GDG  Zhengzhou 版权所有 © 2020</view>

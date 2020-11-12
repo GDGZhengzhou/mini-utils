@@ -5,27 +5,20 @@ const util = require('../../utils/util.js')
 
 Page({
   data: {
-    motto: 'DevFest 2019 @ GDG Zhengzhou',
+    motto: 'GDG Zhengzhou',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     clickCount:0
   },
   //事件处理函数
-  bindViewTap: function() {
+  login: function() {
     this.setData({
       clickCount:this.data.clickCount + 1
     });
     if (this.data.clickCount === 5) {
-      const that = this;
-      wx.scanCode({
-        onlyFromCamera: true,
-        success(res) {
-          const userId = that.getUserId(res);
-          wx.navigateTo({
-            url: `../gift/gift?userid=${userId}`,
-          })
-        }
+      wx.navigateTo({
+        url: '/pages/login/login',
       })
     }
   },

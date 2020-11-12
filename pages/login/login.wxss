@@ -1,0 +1,57 @@
+/* pages/login/login.wxss */
+
+page {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo {
+  width: 400rpx;
+  height:100rpx;
+  background:url('http://www.gdgzhengzhou.com/assets/horizontal-logo.png') center center no-repeat;
+  background-size: 400rpx auto;
+}
+.tip {
+  margin-top: 40rpx;
+  color:#434343;
+  font-size: 32rpx;
+}
+
+.login-form {
+  margin-top: 50rpx;
+  width: 500rpx;
+  border:1rpx solid #434343;
+  border-radius: 20rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+}
+
+.input-item {
+  border-bottom: 1rpx solid #434343;
+  padding:10rpx;
+
+}
+.input-item input {
+  height:80rpx;
+  line-height: 80rpx;
+}
+
+.input-item:last-child {
+
+  border-bottom: none;
+}
+
+.login-btn {
+  width: 400rpx;
+  margin-top: 50rpx;
+}
+
+.copyright {
+  position: absolute;
+  bottom:20rpx;
+  left:0;
+  width: 100%;
+  text-align: center;
+  color: #bfbfbf;
+  font-size: 24rpx;
+}

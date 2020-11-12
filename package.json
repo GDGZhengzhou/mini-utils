@@ -1,0 +1,24 @@
+{
+  "name": "gdgxcx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GDGZhengzhou/mini-utils.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GDGZhengzhou/mini-utils/issues"
+  },
+  "homepage": "https://github.com/GDGZhengzhou/mini-utils#readme",
+  "dependencies": {
+    "@vant/weapp": "^1.6.0",
+    "miniprogram-api-promise": "^1.0.4"
+  }
+}
